@@ -1,6 +1,6 @@
 // Import libraries for making a Component
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 
 // Make a Component
 const Header = (props) => {
@@ -8,6 +8,12 @@ const Header = (props) => {
   return (
     <View style={styles.viewStyle}>
       <Text style={styles.textStyle}>{props.headerText}</Text>
+      <TouchableOpacity 
+        onPress={props.onPress}
+        style={[styles.imageClick, {activeOpacity: 0.5 }]}
+      >
+        <Image style={[styles.headerImage]} source={require('../img/refresh.png')} />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -15,6 +21,7 @@ const Header = (props) => {
 const styles = StyleSheet.create(
   {
     textStyle: {
+      fontFamily: 'RobotoSlab-Bold',
       fontSize: 22
     },
     viewStyle: {
@@ -30,6 +37,17 @@ const styles = StyleSheet.create(
       elevation: 3,
       position: 'relative'
     },
+    headerImage: {
+      width: 35,
+      height: 35,
+      
+    },
+    imageClick: {
+      position: 'absolute',
+      right: 10,
+      top: 15,
+      alignItems: 'center',
+    }
 });
 
 // Make the component available to other parts of app

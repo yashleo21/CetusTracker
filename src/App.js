@@ -13,7 +13,7 @@ class App extends Component {
      this.retrieve();
    }
 
-   retrieve() {
+   retrieve = () => {
      axios.get('https://api.warframestat.us/pc/cetusCycle')
      .then((response) => {
        if (this.validateStatus(response.status)) {
@@ -36,7 +36,7 @@ class App extends Component {
      console.log(this.state);
      return (
        <View>
-       <Header headerText={'Cetus Tracker'} />
+       <Header headerText={'Cetus Tracker'} onPress={this.retrieve} />
        <CetusDetails cetusData={this.state.cetusData} />
        </View>
      );
