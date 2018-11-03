@@ -41,8 +41,6 @@ class ImageLoader extends React.Component {
 }
 
 const CetusDetails = ({ cetusData }) => {
-
-  }
   if (!cetusData) {
     return (
       <View>
@@ -50,7 +48,8 @@ const CetusDetails = ({ cetusData }) => {
           <CardItem>
             <ImageBackground
             source={require('../img/placeholder.jpg')}
-            style={styles.cetusImage}>
+            style={styles.cetusImage}
+            >
             
             <View style={styles.absoluteView}>
               <ActivityIndicator size="large" color='#00ff00' />
@@ -63,11 +62,10 @@ const CetusDetails = ({ cetusData }) => {
     );
   }
   const { isDay, shortString } = cetusData;
+
   return (
-    <View>
-      <Card>
-        <CardItem>
-          
+    <Card>
+        <CardItem> 
           <ImageLoader
             style={styles.cetusImage}
             source={
@@ -76,12 +74,19 @@ const CetusDetails = ({ cetusData }) => {
           />
           <View style={styles.absoluteView}>
            <Text style={styles.cetusText}>
-              { shortString }
+             { isDay === true ? 'DAY' : 'NIGHT' }
            </Text>
           </View>
-        </CardItem>
-      </Card>
-    </View>
+          </CardItem>
+
+      <CardItem>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={styles.timeLeft}>
+              { shortString }
+        </Text>
+        </View>
+      </CardItem>
+   </Card>
   );
 };
 
@@ -93,17 +98,23 @@ const styles = StyleSheet.create({
   },
   absoluteView: {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    left: 15,
+    bottom: 15,
+    // justifyContent: 'flex-start',
+    // alignItems: 'flex-end'
   },
   cetusText: {
-    fontSize: 26,
+    fontFamily: 'warframe',
+    fontSize: 30,
     color: '#fff',
+    opacity: 0.9,
     fontWeight: '600'
+  },
+  timeLeft: {
+    fontFamily: 'RobotoSlab-Regular',
+    fontSize: 30,
+    color: '#000',
+  
   },
   container: {
     flex: 1,
