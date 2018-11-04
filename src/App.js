@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import axios from 'axios';
 import Header from './components/Header';
 import CetusDetails from './components/CetusDetails';
 
 class App extends Component {
    state = {
-     cetusData: null
+     cetusData: null,
+     op: 1
    };
 
    componentDidMount() {
@@ -36,9 +37,11 @@ class App extends Component {
      console.log(this.state);
      return (
        <View>
+         <ScrollView>
        <Header headerText={'Cetus Tracker'} onPress={this.retrieve} />
        <CetusDetails cetusData={this.state.cetusData} />
-       </View>
+      </ScrollView>
+        </View>
      );
    }
 }
