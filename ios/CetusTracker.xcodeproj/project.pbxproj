@@ -42,6 +42,7 @@
 		91F09C1ADB1B436F96310836 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 101F9C6375B749F2A56D70C9 /* RobotoSlab-Regular.ttf */; };
 		E81A3E28630544628AD40E83 /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62F570EA7A53448D84C9549B /* RobotoSlab-Thin.ttf */; };
 		8B0E255F3D464AAA81F4CFAB /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A54603FD534C8A8C099CA8 /* libRNAdMobManager.a */; };
+		C0912E89F3024A8C960243E0 /* libRNTabbedViewPagerAndroid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A92ACE7F224630930D3AE1 /* libRNTabbedViewPagerAndroid.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +354,8 @@
 		62F570EA7A53448D84C9549B /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Thin.ttf"; path = "../assets/fonts/RobotoSlab-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2BA29437718849889BA03ECD /* RNAdMobManager.xcodeproj */ = {isa = PBXFileReference; name = "RNAdMobManager.xcodeproj"; path = "../node_modules/react-native-admob/ios/RNAdMobManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F0A54603FD534C8A8C099CA8 /* libRNAdMobManager.a */ = {isa = PBXFileReference; name = "libRNAdMobManager.a"; path = "libRNAdMobManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0798BD49AF8A4A3390258D2D /* RNTabbedViewPagerAndroid.xcodeproj */ = {isa = PBXFileReference; name = "RNTabbedViewPagerAndroid.xcodeproj"; path = "../node_modules/react-native-tabbed-view-pager-android/ios/RNTabbedViewPagerAndroid.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		88A92ACE7F224630930D3AE1 /* libRNTabbedViewPagerAndroid.a */ = {isa = PBXFileReference; name = "libRNTabbedViewPagerAndroid.a"; path = "libRNTabbedViewPagerAndroid.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +384,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				8B0E255F3D464AAA81F4CFAB /* libRNAdMobManager.a in Frameworks */,
+				C0912E89F3024A8C960243E0 /* libRNTabbedViewPagerAndroid.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +572,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				2BA29437718849889BA03ECD /* RNAdMobManager.xcodeproj */,
+				0798BD49AF8A4A3390258D2D /* RNTabbedViewPagerAndroid.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1213,10 +1218,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Debug;
@@ -1239,10 +1246,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Release;
@@ -1266,6 +1275,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Debug;
@@ -1288,6 +1298,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Release;
@@ -1318,10 +1329,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Debug;
@@ -1352,10 +1365,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Release;
@@ -1385,10 +1400,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Debug;
@@ -1418,10 +1435,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-admob\ios",
+					"$(SRCROOT)\..\node_modules\react-native-tabbed-view-pager-android\ios",
 				);
 			};
 			name = Release;

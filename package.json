@@ -14,7 +14,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.4"
+    "react-native": "0.57.4",
+    "react-native-elements": "^0.19.1",
+    "react-native-viewpager": "^0.2.13",
+    "react-vector-icons": "0.0.1"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
