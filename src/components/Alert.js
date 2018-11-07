@@ -27,17 +27,20 @@ export default class Alert extends Component {
                                     source={{ uri: alert.mission.reward.thumbnail }} 
                                     />
                                     <View style={styles.alertInfoContainer}>
-                                        <Text style={styles.nodeText}>{alert.mission.node}</Text>
-                                        <Text>{'Level: ' + alert.mission.minEnemyLevel + 
-                                        ' - ' + alert.mission.maxEnemyLevel}
+                                        <Text style={styles.nodeText}>
+                                        {alert.mission.node}
+                                            <Text style={styles.levelText}>{' Level: ' + alert.mission.minEnemyLevel + 
+                                            ' - ' + alert.mission.maxEnemyLevel}
+                                            </Text>
                                         </Text>
+                                        
                                         <Text style={[alert.active ? styles.active : styles.expired]}>
                                             {alert.active ? 'ACTIVE' : 'EXPIRED'}
                                         </Text>
-                                        <Text>
+                                        <Text style={styles.expiredText}>
                                             {'Expires in: ' + alert.eta}
                                         </Text>
-                                        <Text>
+                                        <Text style={styles.expiredText}>
                                             {'Faction: ' + alert.mission.faction }
                                             {alert.mission.archwingRequired ? ' (ARCHWING)' : ''}
                                             <Text style={{ color: '#9b1b04' }}>{ alert.mission.nightmare ? ' (NIGHTMARE)' : ''}</Text>
@@ -62,23 +65,34 @@ export default class Alert extends Component {
 }
 
 const styles = StyleSheet.create({
+    expiredText: {
+        fontSize: 15,
+        fontWeight: '300'
+    },
+    levelText: {
+        fontSize: 16,
+        fontWeight: '400'
+    },
     reward: {
         fontSize: 15,
-        fontWeight: '500',
+        fontWeight: '600',
     },
     nodeText: {
         fontSize: 18,
         fontWeight: '500',
     },
     itemImage: {
-        width: 70,
-        height: 70
+        width: 90,
+        height: 90
     },
     alertInfoContainer: {
         paddingLeft: 10,
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        width: 0,
+        flexGrow: 1,
+        flex: 1,
     },
     active: {
         color: 'green',

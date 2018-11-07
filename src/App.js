@@ -4,24 +4,46 @@ import axios from 'axios';
 import Header from './components/Header';
 import CetusDetails from './components/CetusDetails';
 import Alert from './components/Alert';
+import Invasions from './components/Invasions';
 
 class App extends Component {
    state = {
      cetusData: null,
      alertData: null,
+     invasionData: null,
      op: 1,
      platform: 'pc',
    };
    
    componentDidMount() {
      this.retrieve();
+     this.retrieveAlert();
+     this.retrieveInvasion();
    }
 
    setPlatform = (platformVal) => {
     this.setState({
       platform: platformVal,
+      cetusData: null,
+      alertData: null,
+      invasionData: null,
+    }, () => {
+      this.retrieve();
+      this.retrieveAlert();
+      this.retrieveInvasion();
     });
-    this.retrieve();
+  }
+
+  refresh = () => {
+    this.setState({
+      cetusData: null,
+      alertData: null,
+      invasionData: null,
+    }, () => {
+      this.retrieve();
+      this.retrieveAlert();
+      this.retrieveInvasion();
+    });
   }
 
    retrieve = () => {
@@ -37,19 +59,36 @@ class App extends Component {
        }
      })
      .catch((error) => console.log(error));
+   }
 
-     axios.get('https://api.warframestat.us/' + this.state.platform + '/alerts')
-      .then((response) => {
-        if (this.validateStatus(response.status)) {
-          this.setState({
-            alertData: response.data
-          });
-        }
-        else {
-          console.log('Alert Network error');
-        }
-      })
-      .catch((error) => console.log(error));
+   retrieveAlert = () => {
+    axios.get('https://api.warframestat.us/' + this.state.platform + '/alerts')
+    .then((response) => {
+      if (this.validateStatus(response.status)) {
+        this.setState({
+          alertData: response.data
+        });
+      }
+      else {
+        console.log('Alert Network error');
+      }
+    })
+    .catch((error) => console.log(error));
+   }
+
+   retrieveInvasion = () => {
+     axios.get('https://api.warframestat.us/' + this.state.platform + '/invasions')
+     .then((response) => {
+       if (this.validateStatus(response.status)) {
+         this.setState({
+           invasionData: response.data
+         });
+       }
+       else {
+         console.log('Invasion Network error');
+       }
+     })
+     .catch((error) => console.log(error));
    }
 
    validateStatus(statusCode) {
@@ -63,7 +102,7 @@ class App extends Component {
          
           <Header 
           headerText={'Cetus Tracker'} 
-          onPress={this.retrieve} 
+          onPress={this.refresh} 
           setPlatform={this.setPlatform} 
           />
           <CetusDetails cetusData={this.state.cetusData} />
@@ -77,9 +116,13 @@ class App extends Component {
               <Alert alertData={this.state.alertData} />
               </ScrollView>
             </View>
-            <View style={styles.pageStyle} key="2">
-              <Text>Second page</Text>
+
+             <View key="2">
+              <ScrollView>
+                <Invasions invasionData={this.state.invasionData} />
+              </ScrollView>
             </View>
+            
           </ViewPagerAndroid>
             
     </View>

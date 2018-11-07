@@ -19,7 +19,7 @@ const styles = StyleSheet.create(
     },
     viewStyle: {
       height: 60,
-      paddingTop: 15,
+      paddingTop: 5,
       backgroundColor: '#F8F8F8',
       flexDirection: 'row',
       justifyContent: 'center',

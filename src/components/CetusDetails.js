@@ -3,8 +3,7 @@ import { View,
   StyleSheet, 
   Text,
   ImageBackground,
-  ActivityIndicator, 
-  ViewPagerAndroid } from 'react-native';
+  ActivityIndicator, } from 'react-native';
 import Card from './Card';
 import CardItem from './CardItem';
 import ImageLoader from './ImageLoader';
@@ -74,18 +73,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start'
   },
-  viewPager: {
-    flex: 1,
-    backgroundColor: 'green',
-    height: 300
-  },
-  pageStyle: {
-    alignItems: 'center',
-    padding: 20
-  },
   cetusImage: {
     flex: 1,
-    height: 250,
+    height: 230,
     width: null
   },
   absoluteView: {
@@ -104,7 +94,7 @@ const styles = StyleSheet.create({
   },
   timeLeft: {
     fontFamily: 'RobotoSlab-Regular',
-    fontSize: 30,
+    fontSize: 26,
     color: '#000',
   
   },
