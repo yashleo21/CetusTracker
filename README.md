@@ -14,12 +14,12 @@ __External Libraries:__
 
 Axios (For GET requests to Warframe API)
 
+![alt text](https://github.com/yashleo21/CetusTracker/blob/master/scr1.png "Screenshot 1")
+
+
 API:
 -
 [Warframe Worldstate Parser](https://github.com/WFCD/warframe-worldstate-parser)
-
-
-
 
 **Available on Play Store:**
 
