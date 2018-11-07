@@ -17,7 +17,7 @@ export default class Alert extends Component {
 
         return (
             <View>
-                <HeaderAlert headerText={'ALERTS'} />
+                <HeaderAlert headerText={'ALERTS'} right />
                 <Card>
                      {
                          this.props.alertData.map((alert) => {

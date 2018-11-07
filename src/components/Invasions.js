@@ -7,7 +7,6 @@ import CardItem from './CardItem';
 export default class Invasions extends Component {
 
     render() {
-        console.log(this.props.invasionData);
         if (!this.props.invasionData) {
             return (
             <View>
@@ -18,7 +17,7 @@ export default class Invasions extends Component {
             
         return (
             <View>
-                <HeaderAlert headerText={'INVASIONS'} />
+                <HeaderAlert headerText={'INVASIONS'} left right />
                 <Card>
                     {
                        this.props.invasionData.map((invasion) => {

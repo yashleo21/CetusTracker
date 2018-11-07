@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { View, ScrollView, ViewPagerAndroid, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, ScrollView, ViewPagerAndroid, StyleSheet, } from 'react-native';
 import axios from 'axios';
 import Header from './components/Header';
 import CetusDetails from './components/CetusDetails';
 import Alert from './components/Alert';
 import Invasions from './components/Invasions';
+import Fissures from './components/Fissures';
 
 class App extends Component {
    state = {
      cetusData: null,
      alertData: null,
      invasionData: null,
+     fissureData: null,
      op: 1,
      platform: 'pc',
    };
@@ -19,6 +21,7 @@ class App extends Component {
      this.retrieve();
      this.retrieveAlert();
      this.retrieveInvasion();
+     this.retrieveFissure();
    }
 
    setPlatform = (platformVal) => {
@@ -27,10 +30,12 @@ class App extends Component {
       cetusData: null,
       alertData: null,
       invasionData: null,
+      fissureData: null
     }, () => {
       this.retrieve();
       this.retrieveAlert();
       this.retrieveInvasion();
+      this.retrieveFissure();
     });
   }
 
@@ -39,10 +44,12 @@ class App extends Component {
       cetusData: null,
       alertData: null,
       invasionData: null,
+      fissureData: null
     }, () => {
       this.retrieve();
       this.retrieveAlert();
       this.retrieveInvasion();
+      this.retrieveFissure();
     });
   }
 
@@ -91,6 +98,21 @@ class App extends Component {
      .catch((error) => console.log(error));
    }
 
+   retrieveFissure = () => {
+     axios.get('https://api.warframestat.us/' + this.state.platform + '/fissures')
+     .then((response) => {
+       if (this.validateStatus(response.status)) {
+         this.setState({
+           fissureData: response.data
+         });
+       }
+       else {
+         console.log('Fissures Network error');
+       }
+     })
+     .catch((error) => console.log(error));
+   }
+
    validateStatus(statusCode) {
      return statusCode >= 200 && statusCode < 300;
    }
@@ -123,6 +145,11 @@ class App extends Component {
               </ScrollView>
             </View>
             
+            <View key="3">
+              <ScrollView>
+                <Fissures fissureData={this.state.fissureData} />
+              </ScrollView>
+            </View>
           </ViewPagerAndroid>
             
     </View>
